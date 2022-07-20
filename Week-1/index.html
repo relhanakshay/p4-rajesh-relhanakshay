@@ -8,7 +8,7 @@
     <style>
         .row {
          display: flex;
-         background-color: gray;
+         background-color: #454545;
          margin-left: 0.625rem;
          padding: 2rem;
         }
@@ -32,12 +32,40 @@
         .songs td{
             padding: 8px;
         }
-        footer{
-            background-color: blue;
+        .foot{
+            display: flex;
+            background-color: #43689b;
+            flex-direction: row;
+            padding: 1rem;
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+        }
+        .small{
+            height: 7rem;
+            width: 7rem;
+        }
+        .currentsong{
+            padding-left: 8px;
+            color: white;
+        }
+        .outer{
+            display: flex;
+        }
+        .sidenav{
+            background-color: #f0f0f0;
+        }
+        .main{
+            width: 100%;
         }
     </style>
 </head>
 <body>
+    <div class="outer">
+        <div class="sidenav">
+           <p>Hello</p> 
+        </div>
+    <div class="main">
     <div class="row">
         <img class='image' src="https://uploads.codesandbox.io/uploads/user/a8233562-b36b-483d-9de9-5a1ac148fb0c/2Eq--cattyboard.jpg" alt="CattyBoard">
         <div class="content">
@@ -72,8 +100,14 @@
             <td>CATTY CLOUD SYNC</td>
         </tr>
     </table>
-    <footer>
-        <h1>Hello</h1>
-    </footer>
+    </div>
+    </div>
+    <div class="foot">
+        <img class = 'small' src="https://uploads.codesandbox.io/uploads/user/a8233562-b36b-483d-9de9-5a1ac148fb0c/2Eq--cattyboard.jpg" alt="CattyBoard">
+        <div class="currentsong">
+            <p>If It Ain't Love</p>
+            <p>Catson Derulo</p>
+        </div>
+    </div>
 </body>
 </html>
