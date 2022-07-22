@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshay</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
     <style>
+        html,body{
+            font-family: 'Lato', sans-serif;
+            height: 100%;
+        }
         .row {
          display: flex;
          background-color: #454545;
@@ -36,10 +42,12 @@
             display: flex;
             background-color: #43689b;
             flex-direction: row;
+            align-items:center;
             padding: 1rem;
             bottom: 0;
             position: fixed;
-            width: 100%;
+            width: 97%;
+            justify-content: space-between;
         }
         .small{
             height: 7rem;
@@ -48,22 +56,53 @@
         .currentsong{
             padding-left: 8px;
             color: white;
+            display: flex;
+            flex-direction: column;
         }
         .outer{
             display: flex;
+            height: 100%;
         }
         .sidenav{
             background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .main{
             width: 100%;
+        }
+        .item{
+            padding-top: 40px;
+        }
+        .design{
+            color: blue;
+            border: 1px solid black;
+        }
+        .icons{
+            display: flex;
+            flex-direction: row;
+        }
+        .merge{
+            display: flex;
+            flex-direction: row;
+        }
+        .icon{
+            padding-right: 80px;
         }
     </style>
 </head>
 <body>
     <div class="outer">
         <div class="sidenav">
-           <p>Hello</p> 
+           <div ><img src="./icons8-menu-30.png" alt=""></div>
+           <div class="item"><img src="./icons8-home-32.png" alt="Home"></div>
+           <div class="item"><img src="./icons8-search-30.png" alt="Search"></div>
+           <div class="item"><img src="./icons8-speaker-24.png" alt=""></div>
+           <div class="item"><img src="./icons8-user-30.png" alt=""></div>
+           <div class="item"><img src="./icons8-automation-30.png" alt=""></div>
+           <div class="item"><img src="./icons8-spotify-30.png" alt=""></div>
+           <div class="item"><img src="./icons8-soundcloud-30.png" alt=""></div>
         </div>
     <div class="main">
     <div class="row">
@@ -79,34 +118,45 @@
             <td>1. One Dance</td>
             <td>Crake feat CatKid & Cyla</td>
             <td>2:54</td>
-            <td>CATTY CLOUD SYNC</td>
+            <td class="design">CATTY CLOUD SYNC</td>
         </tr>
         <tr>
             <td>2. Panda</td>
             <td>Cattee</td>
             <td>4:06</td>
-            <td>CATTY CLOUD SYNC</td>
+            <td class="design">CATTY CLOUD SYNC</td>
         </tr>
         <tr>
             <td>3. Can't Stop the Feeling</td>
             <td>Catin Cimberlake</td>
             <td>3:56</td>
-            <td>CATTY CLOUD SYNC</td>
+            <td class="design">CATTY CLOUD SYNC</td>
         </tr>
         <tr>
             <td>4. Work From Home</td>
             <td>Cat Harmony feat Colla</td>
             <td>3:34</td>
-            <td>CATTY CLOUD SYNC</td>
+            <td class="design">CATTY CLOUD SYNC</td>
         </tr>
     </table>
     </div>
     </div>
     <div class="foot">
-        <img class = 'small' src="https://uploads.codesandbox.io/uploads/user/a8233562-b36b-483d-9de9-5a1ac148fb0c/2Eq--cattyboard.jpg" alt="CattyBoard">
+        <div class="merge">       
+        <img class='small'
+            src="https://uploads.codesandbox.io/uploads/user/a8233562-b36b-483d-9de9-5a1ac148fb0c/2Eq--cattyboard.jpg"
+            alt="CattyBoard">
         <div class="currentsong">
             <p>If It Ain't Love</p>
             <p>Catson Derulo</p>
+        </div>
+        </div>
+        <div class="icons">
+            <div class="icon"><img src="./icons8-left-arrow-30.png" alt=""></div>
+            <div class="icon"><img src="./icons8-pause-30.png" alt=""></div>
+            <div class="icon"><img src="./icons8-right-arrow-30.png" alt=""></div>
+            <div class="icon"><img src="./icons8-return-30.png" alt=""></div>
+            <div><img src="./icons8-shuffle-30.png" alt=""></div>
         </div>
     </div>
 </body>
