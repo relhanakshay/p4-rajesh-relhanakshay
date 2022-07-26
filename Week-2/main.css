@@ -1,0 +1,19 @@
+h1{
+   max-width: 400px;
+   margin: 40px auto;
+}
+.articles{
+    display: flex;
+    margin-top: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.form-class{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    
+}
