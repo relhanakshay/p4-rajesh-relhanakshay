@@ -1,19 +1,69 @@
 h1{
    max-width: 400px;
    margin: 40px auto;
+   color:blueviolet;
 }
-.articles{
-    display: flex;
+.main-article{
+    display: grid;
     margin-top: 60px;
     margin-left: 40px;
     margin-right: 40px;
+    gap: 40px 0px;
+    grid-template-columns: auto auto;
 }
 .form-class{
-    margin-top: 40px;
+    /* margin-top: 40px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
-    
+    width:max-content;
+    margin: 40px auto;
+    padding: 20px;
+}
+.child-div{
+    display:flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top:20px;
+}
+
+.btn{
+    margin-top: 20px;
+    background-color: lightseagreen;
+    border-radius: 50px;
+    color:white;
+    font-size: large;
+    font-weight: bold;
+    padding: 2px 8px 2px 8px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: lightskyblue;
+}
+.image-article{
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+
+}
+.inner-articles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+.aeroplane{
+    grid-row-start: 2;
+    grid-row-end: 4;
+        align-self: center;
+            justify-self: center;
+}
+.image-aero{
+    height: 12rem;
+    width: 15rem;
+    /* padding: 0 auto; */
+    /* padding-left: 200px; */
 }
