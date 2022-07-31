@@ -8,6 +8,7 @@ h1 {
     max-width: 400px;
     margin: 40px auto;
     color: blueviolet;
+    text-align: center;
 }
 
 b {
@@ -40,6 +41,7 @@ b {
     /* background-color: #f0f2f5; */
     border-radius: 0.5rem;
     padding: 10px;
+    margin-bottom: 20px;
     color: darkblue
 }
 
@@ -103,11 +105,12 @@ b {
     background-color: white;
     padding: 20px;
     border-radius: 1rem;
+    margin-bottom: 20px;
 }
 
 .image-aero {
     height: 12rem;
-    width: 15rem;
+    width: 100%;
     /* padding: 0 auto; */
     /* padding-left: 200px; */
 }
