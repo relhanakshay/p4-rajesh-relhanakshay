@@ -16,8 +16,8 @@ Object.setPrototypeOf(Teacher.prototype, Person.prototype);
 
 var him = new Teacher();
 
-console.log(Object.getPrototypeOf(Teacher));
-console.log(Object.getPrototypeOf(him));
+// console.log(Object.getPrototypeOf(Teacher));
+// console.log(Object.getPrototypeOf(him));
 
 // console.log(him);
 
