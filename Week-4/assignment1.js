@@ -72,7 +72,7 @@ class MyPromise {
 
 new MyPromise((resolve, reject) => {
   setTimeout(() => {
-    let random = Math.random() * 1000;
+    let random = Math.floor(Math.random() * 1000);
     if (random % 5 === 0) {
       console.log(random);
       reject("Thats what she said");
