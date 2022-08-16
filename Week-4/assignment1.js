@@ -5,8 +5,13 @@ class MyPromise {
     }
 
     this.resolvedData = void 0;
+    this.rejectedData = void 0;
+
     this.isResolved = false;
+    this.isRejected = false;
+
     this.resolveChain = [];
+    this.rejectChain = [];
 
     const resolve = (value) => {
       this.isResolved = true;
@@ -17,10 +22,14 @@ class MyPromise {
       }
     };
 
-    // const reject = (reason) => {
-    //   this.state = REJECTED;
-    //   this.value = value;
-    // };
+    const reject = (reason) => {
+      this.isRejected = true;
+      this.rejectedData = reason;
+
+      if (this.rejectChain.length) {
+        this.rejectChain.reduce((acc, fn) => fn(acc), this.rejectedData);
+      }
+    };
 
     // try {
     //   executor(resolve, reject);
@@ -28,7 +37,7 @@ class MyPromise {
     //   reject(error);
     // }
 
-    executor(resolve);
+    executor(resolve, reject);
   }
 
   then(fn) {
@@ -38,11 +47,19 @@ class MyPromise {
     }
     return this;
   }
+
+  catch(fn) {
+    this.rejectChain.push(fn);
+    if (this.isRejected) {
+      this.rejectChain.reduce((acc, fn) => fn(acc), this.rejectedData);
+    }
+    return this;
+  }
 }
 
-new MyPromise((resolve) => {
+new MyPromise((resolve, reject) => {
   setTimeout(() => {
-    resolve(10);
+    reject("Thats what she said");
   }, 1000);
 })
   .then((data) => {
@@ -50,4 +67,10 @@ new MyPromise((resolve) => {
   })
   .then((data) => {
     console.log(data);
+  })
+  .catch((err) => {
+    return `${err}`;
+  })
+  .catch((err) => {
+    console.log(err);
   });
