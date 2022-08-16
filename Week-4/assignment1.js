@@ -55,22 +55,45 @@ class MyPromise {
     }
     return this;
   }
+
+  finally(fn) {
+    this.resolveChain.push(fn);
+    this.rejectChain.push(fn);
+
+    if (this.isResolved) {
+      this.resolveChain.reduce((acc, fn) => fn(acc), this.resolvedData);
+    }
+
+    if (this.isRejected) {
+      this.rejectChain.reduce((acc, fn) => fn(acc), this.rejectedData);
+    }
+  }
 }
 
 new MyPromise((resolve, reject) => {
   setTimeout(() => {
-    reject("Thats what she said");
+    let random = Math.random() * 1000;
+    if (random % 5 === 0) {
+      console.log(random);
+      reject("Thats what she said");
+    } else {
+      console.log(random);
+      resolve(10);
+    }
   }, 1000);
 })
   .then((data) => {
     return data * 2;
   })
   .then((data) => {
-    console.log(data);
+    return data * 2;
   })
   .catch((err) => {
     return `${err}`;
   })
   .catch((err) => {
-    console.log(err);
+    return err;
+  })
+  .finally((data) => {
+    console.log(data);
   });
