@@ -20,18 +20,18 @@ async function* getFirstToDoItemFromTheList() {
   return todoItem;
 }
 
-// const iterator = getFirstToDoItemFromTheList();
-// iterator
-//   .next()
-//   .then(() => {
-//     iterator
-//       .next()
-//       .then(({ value }) => {
-//         console.log(value); // prints first to-do item
-//       })
-//       .catch((e) => console.error(e));
-//   })
-//   .catch((e) => console.error(e));
+const iterator = getFirstToDoItemFromTheList();
+iterator
+  .next()
+  .then(() => {
+    iterator
+      .next()
+      .then(({ value }) => {
+        console.log(value); // prints first to-do item
+      })
+      .catch((e) => console.error(e));
+  })
+  .catch((e) => console.error(e));
 
 // PURE ASYNC AWAIT IMPLEMENTATION
 const getLastToDoItem = async () => {
@@ -44,6 +44,14 @@ const getLastToDoItem = async () => {
   }
 };
 
-getLastToDoItem().then((value) => {
-  console.log(value); // prints last to-do item
-});
+// getLastToDoItem().then((value) => {
+//   console.log(value); // prints last to-do item
+// });
+
+// getFirstToDoItemFromTheList().then((value) => {
+//   console.log(value); // prints last to-do item
+// });
+
+const g = getFirstToDoItemFromTheList();
+console.log(g.next());
+console.log(g.next());
